@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2012, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2026 Contributors to the Eclipse Foundation. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -152,9 +153,11 @@ public class LogMessagesResourceBundleGenerator extends BaseLoggingProcessor {
                     if (level == null || level.isEmpty()) {
                         level = "INFO";
                     }
+                    boolean publish = lmi.publish();
                     logMessagesDetails.put(msgId+".cause", cause);
                     logMessagesDetails.put(msgId+".action", action);
                     logMessagesDetails.put(msgId+".level", level);
+                    logMessagesDetails.put(msgId+".publish", publish);
                     messageIds.add(msgId);
                 } else {
                     error("Duplicate use of message-id " + msgId);

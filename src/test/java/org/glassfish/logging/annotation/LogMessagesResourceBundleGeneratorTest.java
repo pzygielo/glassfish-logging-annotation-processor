@@ -138,6 +138,18 @@ public class LogMessagesResourceBundleGeneratorTest {
     }
     
     @Test
+    public void testPublishFlag() {
+        File f1 = new File(BASE_PATH, "JavaBean.java");
+        String output = executeCompiler(f1);
+        assertTrue(output.contains("Annotation processing finished successfully."));
+        ResourceBundle rb = ResourceBundle.getBundle(JavaBean.LOGMESSAGES_RB + "_details");
+        String value1 = rb.getString(JavaBean.EJB_SYSTEM_INITIALIZED + ".publish");
+        assertEquals("false", value1);
+        String value2 = rb.getString(JavaBean.EJB_DEPLOYMENT_FAILED + ".publish");
+        assertEquals("true", value2);
+    }
+
+    @Test
     public void testIncorrectlyPlacedLoggerInfoAnnotation() {
         File f1 = new File(BASE_PATH, "Tea.java");
         String output = executeCompiler(f1);

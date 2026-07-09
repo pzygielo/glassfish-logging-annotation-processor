@@ -43,6 +43,7 @@ public class JavaBean {
     @LogMessageInfo(
         message = "EJB subsystem initialized.",
         comment = "This message indicates that the EJB container initialized successfully.",
+        publish = false,
         level = "INFO")
     public static final String EJB_SYSTEM_INITIALIZED = "AS-EJB-00001";
 
