@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2012, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2026 Contributors to the Eclipse Foundation. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -45,12 +46,6 @@ public abstract class BaseLoggingProcessor extends AbstractProcessor {
     protected void warn(String msg) {
         processingEnv.getMessager().printMessage(Kind.WARNING, 
                 getClass().getName() + ": " + msg);
-    }
-
-    protected void warn(String msg, Throwable t) {
-        String errMsg = msg + ": " + t.getMessage();
-        processingEnv.getMessager().printMessage(Kind.WARNING, 
-                getClass().getName() + ": " + errMsg);
     }
 
     protected void error(String msg) {
