@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2012, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2026 Contributors to the Eclipse Foundation. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -136,7 +137,7 @@ class LoggingMetadata extends TreeMap<String,Object>{
     // Returns either the unusedLine or reads a new line if the 
     // unusedLine is null.
     private String nextLine(String unusedLine, BufferedReader reader) 
-            throws java.io.IOException {
+            throws IOException {
 
         if (unusedLine != null) return unusedLine;
 
